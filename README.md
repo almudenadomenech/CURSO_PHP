@@ -61,5 +61,6 @@ echo count($tutor2,COUNT_RECURSIVE);
 
     echo $nombre . " " . $pais;
 
+### Interpolación
 
-
+ echo "Mi nombre es: {$nombre} mi país de residencia es {$pais}";
