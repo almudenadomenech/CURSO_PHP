@@ -228,3 +228,240 @@ $productos = [
 foreach($productos as $producto){
     echo $producto["codigo"] . "-" .$producto["descripción"]. "<br>";
 }
+
+### break
+
+para detener el ciclo:
+
+$contador = 1;
+
+while($contador <= 20){
+    echo $contador ."<br>";
+
+    if($contador == 10){
+        break;
+
+    }
+    $contador++;
+}
+
+Ejemplo 2: 
+
+$nombres = ["ana", "maria", "pedro", "david"];
+
+foreach ($nombres as $nombre) {
+    echo $nombre . "<br>";
+
+    if($nombre == "maria"){
+        break;
+    }
+}
+
+### continue
+
+Muestra todos los valores menos el que le decimos en el condicional.
+
+$nombres = ["ana", "maria", "pedro", "david"];
+
+foreach ($nombres as $nombre) {
+  
+
+    if($nombre == "maria"){
+        continue;
+    }
+    echo $nombre . "<br>";
+}
+
+## INCLUDE Y REQUIRE
+
+Ambas funciones sirven para añadir otros ficheros a nuestros scripts en PHP.
+
+### include
+inserta en nuestro script un código procedente de otro archivo, si no existe dicho archivo o si contiene algún tipo de error nos mostrará un warning por pantalla y el script seguirá ejecutándose.
+
+include "014.ejercicio_for.php";
+
+### require
+hace la misma operación que include , pero en caso de no existir el archivo o error en el mismo mostrará un ‘fatal y el script no se sigue ejecutando.
+
+require  "014.ejercicio_for.php";
+
+
+## Funciones propias
+
+Una función es un conjunto de instrucciones a la que podemos recurrir siempre que queramos . Éstas pueden recibir parámetros y realizar todo tipo de tareas, ya sean complejas o sencillas. Un nombre de función válido comienza con una letra o guión bajo , seguido de cualquier número de letras, números o guiones bajos.
+
+function promedio_alumno ($nota_1, $nota_2, $nota_3){
+    $promedio = ($nota_1+ $nota_2+ $nota_3)/3;
+    return $promedio;
+}
+
+echo promedio_alumno(10, 5, 4);
+
+### Incluir funciones de otros ficheros.
+
+Se puede hacer con include o require.
+
+<?php
+
+include "019.funciones.php";
+
+echo promedio_alumno(10, 8, 7);
+
+## FUNCIONES STRING
+
+### strtolower:
+Convierte todas las letras en minúsculas.
+
+$cadena_texto = "Hola Mundo";
+
+echo strtolower($cadena_texto); -> hola mundo
+
+### strtoupper:
+Convierte todas las letras en mayúsculas.
+
+$cadena_texto = "Hola Mundo";
+
+echo strtoupper($cadena_texto); -> HOLA MUNDO
+
+
+### ucfirst:
+Convierte la primera letra del string a mayúsculas.
+
+$cadena_texto = "hola mundo";
+
+echo ucfirst($cadena_texto); -> Hola mundo.
+
+### ucwords:
+Convierte la primera letra de cada palabra en mayúsculas.
+
+$cadena_texto = "hola mundo";
+
+echo ucwords($cadena_texto); _> Hola Mundo.
+
+
+### strlen:
+Devuelve el numero de caracteres de la cadena.
+
+$cadena_texto = "hola mundo";
+
+$longitud = strlen($cadena_texto);
+
+echo $cadena_texto . " tiene " . $longitud . " caracteres <br>"; -> hola mundo tiene 10 caracteres.
+
+## str_word_count:
+
+devuelve las palabras que continene una cadena.
+
+$palabras = str_word_count($cadena_texto);
+
+echo $cadena_texto . " tiene " . $palabras . " palabras <br>"; => hola mundo tiene 2 palabras.
+
+
+## CONVERTIR UN STRING EN UN ARRAY
+
+$fecha_1 = "2021/11/29";
+$fecha_2 = "2021/11/30";
+$numeros = "Uno Dos Tres Cuatro Cinco Seis Siete";
+
+$array_fecha = explode("/", $fecha_1);
+
+echo $array_fecha[0]; => 2021
+
+
+## FUNCIONES MATEMÁTICAS
+
+### pow: Elevar a una potencia
+
+echo pow(5, 3); => 125
+
+### sqrt: calcular la raiz cuadrada de un número.
+
+echo sqrt(9); => 3
+
+### rand: muestra un numero aleatorio en el rango que le pongamos
+
+Cada vez que lo recargemos nos dará un número diferente.
+
+echo rand(1, 100); => 65
+
+
+### floor: redondeo un decimal hacia abajo.
+
+echo floor(4.3); => 4
+
+### ceil: redondeo un decimal hacia arriba.
+
+echo ceil(4.3); => 5
+
+### round: redondea un numero decimal.
+ Lo redondea al número más próximo.
+
+ echo round(3.4);=> 3
+
+ También le podemos decir el número de decimales que queremos mostrar.(En el segundo parámetro)
+
+ echo round(1.65872, 2); => 1.66
+
+ ### Formatear cantidades con decimales.
+
+ Se puede usar con un solo parámetro o con los 4.
+
+ number_format(cantidad, decimales, separador_decimal, separador_millares)
+
+ 1. con un parámetro: redondea el número y utiliza un separador de millares.
+
+ $cantidad_1 = 12732.77;
+$cantidad_2 = 1931.81;
+
+$cantidad_1= number_format($cantidad_1);
+
+echo $cantidad_1; => 12,733
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
