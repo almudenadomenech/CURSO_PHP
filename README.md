@@ -419,6 +419,19 @@ $cantidad_1= number_format($cantidad_1);
 echo $cantidad_1; => 12,733
 
 
+### date()
+
+1. Muestra la fecha actual:
+
+$fecha = date("d/m/Y");
+echo $fecha;
+
+2. Muestra la hora actual:
+
+$hora = date("H:i");
+echo $hora;
+
+
 
 
 
