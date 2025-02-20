@@ -432,6 +432,66 @@ $hora = date("H:i");
 echo $hora;
 
 
+## ¿Qué Es Un Hash Y Cómo Funciona?
+
+Una función criptográfica hash usualmente conocida como “es un algoritmo matemático que transforma cualquier bloque
+arbitrario de datos en una nueva serie de caracteres con una longitud fija .Independientemente de la longitud de los datos de entrada , el valor
+hash de salida tendrá siempre la misma longitud.
+
+# FORMULARIOS
+
+1. Etiqueta form action= a que archivo lo vamos a mandar.
+2. method = post
+    En el archivo al que lo hemos enviado.
+
+    $nombre= $_POST['nombre'] ; => Es el nombre que se le ha dado en name.
+$asignatura= $_POST['asignatura'] ;
+$fruta= $_POST['frutas'] ;
+
+echo $nombre ." - " . $asignatura ." - " .$fruta;
+
+## select multiple
+ Para que podamos seleccionar varios valores.
+
+1.  <select id="asignatura" name="asignatura[]" multiple>
+
+ añadimos multiple y los corches de un array al nombre de name
+
+$materias =$_POST['asignatura'];
+foreach($materias as $asignatura){
+
+    echo $asignatura. "<br>";
+}
+
+2. checkbox:
+
+<label for="opcion-1">
+    <input type="checkbox" value="Manzana" id="opcion-1" name="frutas[]">Manzana
+
+</label>
+
+<br>
+
+<label for="opcion-2">
+    <input type="checkbox" value="pera" id="opcion-2" name="frutas[]">Pera
+
+</label>
+
+También ponemos corchetes en name para indicar que es un array
+
+$arrayFrutas =$_POST['frutas'];
+foreach($arrayFrutas as $fruta){
+
+    echo $fruta. "<br>";
+}
+
+
+
+    
+
+
+
+
 
 
 
