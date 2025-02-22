@@ -485,9 +485,100 @@ foreach($arrayFrutas as $fruta){
     echo $fruta. "<br>";
 }
 
+## is_null (comprobar si una variable es null)
+
+$numero;
+
+if(is_null($numero)){
+    echo "Es nula";
+}else{
+    echo "No es nula";
+}
+
+## unset(Sirve para destruir o eliminar una variable)
+
+$numero= 9;
+
+unset($numero);
+
+if(is_null($numero)){
+    echo "Es nula";
+}else{
+    echo "No es nula";
+}
+
+## empty (comprobar si una variable esta vacia)
+
+$numero= 9;
+
+if(empty($numero)){
+    echo "Esta vacia";
+}else{
+    echo "No esta vacia";
+}
+
+## isset (comprueba si una variable esta definida y no tiene el valor null)
+
+$numero= $_GET['numero'];
+
+if(isset($numero)){
+    echo "Esta vacia";
+}else{
+    echo "No esta vacia";
+}
 
 
-    
+# ENVIAR ARCHIVOS DESDE UN FORMULARIO
+
+En la etiqueta form pondriamos:
+
+  <form action="carga.php" method="post" enctype="multipart/form-data">
+
+En el archivo de destino para poder manipular los datos:
+
+// recibe el nombre
+echo $_FILES['fichero']['name']."<br>";
+// recibe la ruta del archivo temporal donde se encuentra el archivo
+echo $_FILES['fichero']['tmp_name']."<br>";
+// Tipo de archivo que estamos enviando
+echo $_FILES['fichero']['type']."<br>";
+// Error, si se a cargado bien o no
+echo $_FILES['fichero']['error']."<br>";
+// El tamaño del fichero
+echo $_FILES['fichero']['size']."<br>";
+
+
+## Las Cookies en PHP
+
+Las cookies son un mecanismo por el que se almacenan datos en el navegador para monitorizar o identificar a los usuarios que vuelvan al sito web . En otras palabras podemos decir que l as cookies son pequeños archivos donde almacenamos un datos, estos archivos se almacenan en el navegador del cliente.
+Las cookies se deben de crear antes del Doctype , ya que han de ser generadas antes de que el navegador procese el código HTML.
+
+Ejemplo de uso de cookies:
+preferencias de idioma, seguimiento de anuncios etc.
+
+1. crear una cookie:
+
+<?php
+
+// setcookie("Nombre", valor, expiracion, dir, dominio, secure, httponly);
+setcookie("Idioma", "es", time()+60*60*24*30,"/", "localhost",false, false);
+
+?>
+
+2. Eliminar una cookie:
+
+<?php
+
+// setcookie("Nombre", valor, expiracion, dir, dominio, secure, httponly);
+setcookie("Idioma", "es", time()-60,"/", "localhost",false, false);
+
+?>
+
+
+
+## Sesiones en PHP
+
+Las sesiones en aplicaciones web desarrolladas con PHP nos sirven para almacenar información durante toda la visita de un usuario a un sitio web . Dicha información se almacena en el servidor. Ejemplo de uso de esiones: inicio de sesión ( login ), buscadores (que recuerde termino de búsqueda) etc.
 
 
 
