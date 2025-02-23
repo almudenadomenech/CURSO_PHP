@@ -1,9 +1,7 @@
 <?php
-    session_name("CON");   
+    session_name("LOGIN");   
     session_start();
 
-
-    $_SESSION['contador']= 1;
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +12,8 @@
     <title>Sesiones en PHP</title>
 </head>
 <body>
-    <?php echo "Has recargado esta página ". $_SESSION['contador']. " veces"; ?>
-    <br><br>
-    <a href="index.php">Inicio</a>
-    <br>
+    <?php echo "HOLA ". $_SESSION['Nombre']; ?>
+    
     <a href="cerrar.php">Eliminar sesión</a>
 </body>
 </html>

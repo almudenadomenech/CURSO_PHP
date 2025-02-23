@@ -580,11 +580,42 @@ setcookie("Idioma", "es", time()-60,"/", "localhost",false, false);
 
 Las sesiones en aplicaciones web desarrolladas con PHP nos sirven para almacenar información durante toda la visita de un usuario a un sitio web . Dicha información se almacena en el servidor. Ejemplo de uso de esiones: inicio de sesión ( login ), buscadores (que recuerde termino de búsqueda) etc.
 
+MIRAR EN LA CARPETA DE SESIONES_PHP
 
+### Eliminar sesiones
 
+session_destroy();
 
+## REDIRIGIR A OTRA PAGINA
 
+Se pone header.
 
+header('Location: contador.php');
+
+## EXPRESIONES REGULARES
+
+-Son “una serie de caractéres que definen un patrón de búsqueda”.
+
+-Las expresiones regulares son patrones que usaremos para encontrar una o varias combinaciones de caracteres en un texto.
+
+-En el área de la programación , las expresiones regulares son un método por medio del cual se pueden realizar búsquedas dentro de cadenas de caracteres . Sin importar la amplitud de la búsqueda requerida de un patrón definido de caracteres, las expresiones regulares proporcionan una solución práctica al problema.
+
+Ejemplo: 
+
+1. Validaciones en Frontend
+
+<input type="text" name="usuario" pattern="[a-zA-Z]{3,10}" maxlength="10">
+
+pattern="[a-zA-Z]{3,10}" maxlength="10"  => Solo se pueden introducir letras de la a a la z en minúsculas y mayúsculas. y para indicar el numero de valores introducidos se colocan entre llaves en esta caso de 3 a 10.
+
+con maxlength definimos el máximo de caracteres que nos deja introducir.
+
+2. Validaciones en PHP
+
+if(!preg_match("/^$[a-zA-Z]{3,10}/",$_POST['usuario'])){
+    echo "El usuario no coincide con el formato solicitado";
+    exit();
+}
 
 
 
