@@ -618,6 +618,14 @@ if(!preg_match("/^$[a-zA-Z]{3,10}/",$_POST['usuario'])){
 }
 
 
+# POO
+
+La Programación orientada a Objetos (POO) es un paradigma de programción más utilizado, es decir, es una forma o un estilo de programación. Se basa en el concepto de clases y objetos. Este tipo de programación se utiliza para estructurar un programa de software en piezas simples y reutilizables de planos de código(clases) para crear instancias individuales de objetos.
+
+Una clase es una plantilla que define de manera genérica cómo van a ser los objetos. Las clases tienen atributos(características o variables) y métodos(acciones o funciones).
+
+
+
 
 
 
